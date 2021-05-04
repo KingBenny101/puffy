@@ -9,12 +9,9 @@ function windowResize() {
   console.log(w);
   console.log(h);
 }
-
 function reset() {
-  window.location.reload();
+  location.replace("index.html");
 }
-
-
 function displayMessage(str){
     // Get the modal
 var modal = document.getElementById("myModal");
@@ -35,6 +32,8 @@ window.onclick = function(event) {
 }
 }
 
+
+
 var turns = 0;
 var moves = 0;
 var board = [
@@ -43,6 +42,7 @@ var board = [
   [-1, -1, -1],
 ];
 var winner = -1;
+
 
 function changeBlock(block) {
   if (block.childNodes.length) {
@@ -70,7 +70,6 @@ function changeBlock(block) {
 
   return 1;
 }
-
 function updateBoard(block) {
   var index = block.getAttribute("id");
   var i = parseInt(index[0]);
@@ -87,7 +86,6 @@ function updateBoard(block) {
   }
   checkBoard();
 }
-
 function checkBoard() {
   if (moves == 9) {
     displayMessage("The game is a draw!!!")
@@ -168,7 +166,6 @@ function checkRow(val, row) {
   }
   return check;
 }
-
 function checkColumn(val, col) {
   var i;
   var check = 1;
@@ -180,7 +177,6 @@ function checkColumn(val, col) {
   }
   return check;
 }
-
 function checkDiagonal1(val){
     var i;
     var check = 1;
@@ -194,8 +190,6 @@ function checkDiagonal1(val){
 
     return check;
 }
-
-
 function checkDiagonal2(val){
     var i;
     var check = 1;
@@ -213,3 +207,63 @@ function checkDiagonal2(val){
 
 
 
+
+
+
+
+
+
+function playerVplayer(){
+  
+  localStorage.setItem("gamemode","0");
+  location.replace("game.html");
+  
+}
+function playerVcomputer(){
+  localStorage.setItem("gamemode","1");
+  location.replace("game.html");
+ 
+}
+
+
+
+
+
+async function gamestart(){
+  if (localStorage.getItem("gamemode") == "1"){
+    document.getElementsByClassName("v1_17")[0].textContent = "AI";
+    document.getElementsByClassName("v1_18")[0].textContent = "Player";
+    var i;
+    var j;
+    for ( i = 0 ; i < 3 ;i++){
+      for (j= 0 ; j<3;j++){
+        var id = i.toString()+j.toString();
+        var block = document.getElementById(id);
+        block.setAttribute("onclick","changeBlock(this);updateBoard(this);AImove()");
+      
+      }
+    }
+
+
+  }
+  else if (localStorage.getItem("gamemode") == "0"){
+    document.getElementsByClassName("v1_17")[0].textContent = "Player 1";
+  document.getElementsByClassName("v1_18")[0].textContent = "Player 2";
+  }
+  
+}
+
+
+
+async function AImove(){
+  let move = await eel.TicTakToeAIwrapper(board)();
+    var i = move[0];
+    var j = move[1];
+   
+    var id = i.toString()+j.toString();
+    var block = document.getElementById(id);
+
+    
+    changeBlock(block);
+    updateBoard(block);
+} 
