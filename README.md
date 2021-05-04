@@ -20,3 +20,10 @@ But play tic tac toe with yourself, looser.
 # Version 1.0.0-alpha
 
 OOF go play roblox
+
+
+# Version 1.0.0-alpha
+
+Added start and menu
+Added AI
+
