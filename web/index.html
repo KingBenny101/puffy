@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/main.css" rel="stylesheet" />
+    <script type="text/javascript" src = "/eel.js"></script>
+    <script type="text/javascript" src = "scripts/main.js">
+      
+    </script>
+    <title>XO Game</title>
+    
+  </head>
+  <body onresize="windowResize()" onload="displayMessage('Welcome!!!')">
+    <div class="v1_2">
+      <div class="v1_3"></div>
+      <div class="v1_4"></div>
+      <span class="v1_5">XO Game</span>
+      <div class="v1_9" id="player1"></div>
+      <span class="v1_17">Player 1</span>
+      <div class="v1_10" id="player2"></div>
+      <span class="v1_18">Player 2</span>
+      <div class="v1_11" onclick="reset()"></div>
+      <span class="v1_20" onclick="reset()">Reset</span>
+      <div class="v4_3" id = "00" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_4" id = "01" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_5" id = "02" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_6" id = "10" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_8" id = "11" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_7" id = "12" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_9" id = "20" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_11" id = "21" onclick="changeBlock(this);updateBoard(this)"></div>
+      <div class="v4_10" id = "22" onclick="changeBlock(this);updateBoard(this)"></div>
+      
+     
+
+
+      <div id="myModal" class="modal">
+        <div class="modal-content" id = "message">
+        </div>
+      
+      </div>
+      
+      
+      
+      
+    </div>
+  </body>
+</html>
