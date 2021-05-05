@@ -1,3 +1,6 @@
+
+
+
 function windowResize() {
   var w = 800;
   var h = 600;
@@ -221,31 +224,60 @@ function playerVplayer(){
 }
 function playerVcomputer(){
   localStorage.setItem("gamemode","1");
-  location.replace("game.html");
+  var option1 = document.getElementsByClassName("v10_53")[0];
+  var option2 = document.getElementsByClassName("v10_56")[0];
+
+  option1.textContent = "Go First";
+  option2.textContent = "Go Second";
+
+  option1.setAttribute("onclick","AIgoSecond();location.replace('game.html');");
+  option2.setAttribute("onclick","AIgoFirst();location.replace('game.html');");
+  
  
 }
 
 
+function AIgoFirst(){
+  localStorage.setItem("AIorder","1");
+}
+
+function AIgoSecond(){
+  localStorage.setItem("AIorder","0");
+}
 
 
 
 async function gamestart(){
   if (localStorage.getItem("gamemode") == "1"){
-    document.getElementsByClassName("v1_17")[0].textContent = "AI";
-    document.getElementsByClassName("v1_18")[0].textContent = "Player";
-    var i;
-    var j;
-    for ( i = 0 ; i < 3 ;i++){
-      for (j= 0 ; j<3;j++){
-        var id = i.toString()+j.toString();
-        var block = document.getElementById(id);
-        block.setAttribute("onclick","changeBlock(this);updateBoard(this);AImove()");
-      
+    if (localStorage.getItem("AIorder") == "1"){
+      document.getElementsByClassName("v1_17")[0].textContent = "AI";
+      document.getElementsByClassName("v1_18")[0].textContent = "Player";
+      var i;
+      var j;
+      for ( i = 0 ; i < 3 ;i++){
+        for (j= 0 ; j<3;j++){
+          var id = i.toString()+j.toString();
+          var block = document.getElementById(id);
+          block.setAttribute("onclick","changeBlock(this);updateBoard(this);AImove()");
+        }
       }
+      AImove();
     }
+    else if (localStorage.getItem("AIorder") == "0"){
+      document.getElementsByClassName("v1_17")[0].textContent = "Player";
+      document.getElementsByClassName("v1_18")[0].textContent = "AI";
+      var i;
+      var j;
+      for ( i = 0 ; i < 3 ;i++){
+        for (j= 0 ; j<3;j++){
+          var id = i.toString()+j.toString();
+          var block = document.getElementById(id);
+          block.setAttribute("onclick","changeBlock(this);updateBoard(this);AImove()");
+        }
+      }
 
-
-  }
+    }
+  }  
   else if (localStorage.getItem("gamemode") == "0"){
     document.getElementsByClassName("v1_17")[0].textContent = "Player 1";
   document.getElementsByClassName("v1_18")[0].textContent = "Player 2";
@@ -262,8 +294,8 @@ async function AImove(){
    
     var id = i.toString()+j.toString();
     var block = document.getElementById(id);
-
-    
     changeBlock(block);
     updateBoard(block);
+    
+    
 } 
