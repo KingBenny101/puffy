@@ -22,8 +22,15 @@ But play tic tac toe with yourself, looser.
 OOF go play roblox
 
 
-# Version 1.0.0-alpha
+# Version 1.1.0-alpha
 
 Added start and menu      
 Added AI
+
+# Version 1.2.0-alpha    
+
+Fixed issue #1   
+Added Order Menu for P v AI
+
+
 
