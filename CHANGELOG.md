@@ -1,40 +1,23 @@
-# Puffy
-Tic Tac Toe made using eel-python.      
-After v2.0.0 the entire project was ported to electronjs.
+# 1.0.0-alpha
+* ## Release highlights
+  * Started the project in [eel](https://github.com/ChrisKnott/Eel) python.
+* ## Features
+  * OOF go play roblox
 
 
+# 1.1.0-alpha
+* ## Release highlights
+ * Added start and menu      
+ * Added AI called Puffy
 
-# About
-
-Bruh i built this in a day.   
-My friend was the reason.  
-It doesn't do much.  
-Its still a GUI.    
-
-
-# What does it do?
-
-Absolutely nothing!!!     
-But play tic tac toe with yourself, looser.    
+# 1.2.0-alpha    
+* ## Release highlights
+ * Added Order Menu for P v AI
+* ## Fixes
+ * Fixed issue #1   
 
 
-# Version 1.0.0-alpha
-
-OOF go play roblox
-
-
-# Version 1.1.0-alpha
-
-Added start and menu      
-Added AI
-
-# Version 1.2.0-alpha    
-
-Fixed issue #1   
-Added Order Menu for P v AI
-
-
-# Version 2.0.0      
-Ported the entire project to Electron
-
+# Version 2.0.0 
+* ## Release highlights
+  * Ported the entire project to [Electron](https://www.electronjs.org/)
 
