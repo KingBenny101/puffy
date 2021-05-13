@@ -1,9 +1,10 @@
-# TicTacToe
-Tic Tac Toe made using eel-python
+# Puffy
+Tic Tac Toe made using eel-python.      
+After v2.0.0 the entire project was ported to electronjs.
 
 
 
-# XOGUI
+# About
 
 Bruh i built this in a day.   
 My friend was the reason.  
@@ -32,5 +33,8 @@ Added AI
 Fixed issue #1   
 Added Order Menu for P v AI
 
+
+# Version 2.0.0      
+Ported the entire project to Electron
 
 
