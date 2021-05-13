@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./css/pvp.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+
+  <body onload="startGame()">
+    <div class="v15_4">
+      <div class="v15_5"></div>
+      <div class="v15_23"></div>
+      <div class="v15_24"></div>
+
+      <div class="v15_8"></div>
+      <span class="v15_9">Tic Tac Toe</span>
+      <div class="v15_10"></div>
+      <span class="v15_11">Player</span>
+      <div class="v15_12">
+        <div>
+          <ul id="chat" style="list-style-type: disc">
+            <li>
+              Puffy : Hi, I am Puffy. Start when the above box changes color.
+              You can chat with your opponent here. GLHF
+            </li>
+          </ul>
+        </div>
+        <form id="messagebar">
+          <input type="text" id="messagebox" placeholder="Enter Message" />
+          <input type="submit" id="sendbtn" placeholder="Send" />
+        </form>
+      </div>
+      <div class="v15_14"></div>
+      <span class="v15_15" onclick="leaveRoom()">Leave</span>
+
+      <div class="v15_16" id="00" onclick="movePlayed(this)"></div>
+      <div class="v15_18" id="01" onclick="movePlayed(this)"></div>
+      <div class="v15_20" id="02" onclick="movePlayed(this)"></div>
+      <div class="v15_6" id="10" onclick="movePlayed(this)"></div>
+      <div class="v15_21" id="11" onclick="movePlayed(this)"></div>
+      <div class="v15_7" id="12" onclick="movePlayed(this)"></div>
+      <div class="v15_22" id="20" onclick="movePlayed(this)"></div>
+      <div class="v15_19" id="21" onclick="movePlayed(this)"></div>
+      <div class="v15_17" id="22" onclick="movePlayed(this)"></div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content" >
+          <div class = "modal-default"> Click outside this box to close.</div>
+          <div id = "message"class = "modal-message" >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/game.js"></script>
+  </body>
+</html>
