@@ -27,7 +27,7 @@ To build the project use
 npm run make
 ```
 
-## [PuffyServer](https://github.com/benstindavis/Puffy/tree/master/PuffyServer)
+## [PuffyServer](https://github.com/benstindavis/PuffyServer)
 A node.js application for playing the game online. Follow the same installation steps. The server will run at http://localhost:3000/. You can use any browser to connect.
 
 
