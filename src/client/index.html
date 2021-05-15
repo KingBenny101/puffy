@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Puffy</title>
+  </head>
+  <body>
+    <div class="v17_2">
+      <div class="v17_3"></div>
+      <span class="v17_4">Tic Tac Toe</span>
+      <span class="v17_5">v2.0.0</span>
+      <div class="v17_6"></div>
+      <div class="v17_7"></div>
+      <span class="v17_10" onclick="loadGame()" >Join</span>
+      
+      <div class="v17_12" id="join">
+        <input
+          id = "username"
+          type="text"
+          placeholder="Username"
+          style="text-align: center; font-size: 24px"
+        />
+        <input
+          id = "room"
+          type="text"
+          placeholder="Room Name"
+          style="text-align: center; font-size: 24px"
+        />
+      </div>
+      <div class="v17_14" id="publicChat">
+        <div>
+          <ul id="chat" style="list-style-type: disc">
+            <li>
+                This is Public Chat
+            </li>
+          </ul>
+        </div>
+
+        <form id="messagebar">
+          <input id = "messagebox" type="text" placeholder="Enter Message"  />
+          <input id = "sendbtn" type="submit" />
+        </form>
+      </div>
+    </div>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/game.js"></script>
+  </body>
+</html>

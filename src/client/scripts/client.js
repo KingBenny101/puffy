@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io('http://localhost:3000/');
 // THIS IS THE CLIENT
 
 socket.on("message", (message) => {

@@ -3,6 +3,7 @@
 }
 body {
   font-size: 14px;
+  overflow: hidden;
 }
 .v15_4 {
   width: 800px;
@@ -332,5 +333,17 @@ img {
   font-weight: Regular;
   font-size: 48px;
 
+}
+.v10_55 {
+  width: 60px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 587px;
+  left: 0px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 10px;
+  opacity: 1;
+  text-align: center;
 }
 

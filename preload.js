@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log("Preload was loaded");
     window.AImove = function(){
         const { spawn } = require('child_process');
-        const childPython = spawn('python3.9',[path.join(__dirname,'scripts/TicTacToeAI.py'),parseBoard(board)]);
+        const childPython = spawn('python3.9',[path.join(__dirname,'externalScripts/TicTacToeAI.py'),parseBoard(board)]);
       
         blockGrid();
         
