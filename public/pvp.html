@@ -13,7 +13,7 @@
     <div class="v15_4">
       <div class="v15_5"></div>
       <div class="v15_23"></div>
-      <div class="v15_24" onclick= "location.replace('menu.html')" ></div>
+      <div class="v15_24" ></div>
 
       <div class="v15_8"></div>
       <span class="v15_9">Tic Tac Toe</span>
@@ -30,7 +30,7 @@
         </div>
         <form id="messagebar">
           <input type="text" id="messagebox" placeholder="Enter Message" />
-          <input type="submit" id="sendbtn"  />
+          <input type="submit" id="sendbtn" placeholder="Send" />
         </form>
       </div>
       <div class="v15_14"></div>
@@ -45,6 +45,7 @@
       <div class="v15_22" id="20" onclick="movePlayed(this)"></div>
       <div class="v15_19" id="21" onclick="movePlayed(this)"></div>
       <div class="v15_17" id="22" onclick="movePlayed(this)"></div>
+      <span class="v10_55">v2.0.0</span>
 
       <div id="myModal" class="modal">
         <div class="modal-content" >
@@ -55,7 +56,7 @@
       </div>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script src="scripts/client.js"></script>
     <script src="scripts/game.js"></script>
   </body>

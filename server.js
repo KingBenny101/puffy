@@ -141,6 +141,29 @@ io.on("connection", (socket) => {
     });
   });
 
+
+  // JoinPublic
+
+  socket.on("joinPublic" ,(username) => {
+    const PUBLIC_ID = "public27"; 
+    socket.join(PUBLIC_ID);
+    socket.broadcast.emit('publicMessage',`${username} has joined`);
+
+
+
+    socket.on('publicMessageFromClient',(data) => {
+      const username = data.username;
+      const message = data.message;
+      io.to(PUBLIC_ID).emit('publicMessage',`${username}: ${message}`);
+      
+    });
+
+
+    socket.on("leavePublic",(username) => {
+      socket.leave(PUBLIC_ID);
+      socket.broadcast.emit('publicMessage',`${username} has left`);
+    });
+  });
   // Diconnect
   socket.on("disconnect", () => {
     // Broadcast when disconnect

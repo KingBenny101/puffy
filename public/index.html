@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link href="./css/main.css" rel="stylesheet" />
     <title>Puffy</title>
-</head>
+  </head>
+  <body>
+    <div class="v17_2">
+      <div class="v17_3"></div>
+      <span class="v17_4">Tic Tac Toe</span>
+      <span class="v17_5">v2.0.0</span>
+      <div class="v17_6"></div>
+      <div class="v17_7"></div>
+      <span class="v17_10" onclick="loadGame()" >Join</span>
+      
+      <div class="v17_12" id="join">
+        <input
+          id = "username"
+          type="text"
+          placeholder="Username"
+          style="text-align: center; font-size: 24px"
+        />
+        <input
+          id = "room"
+          type="text"
+          placeholder="Room Name"
+          style="text-align: center; font-size: 24px"
+        />
+      </div>
 
-<body>
-    <div class="v13_2">
-        <div class="v13_3"></div>
-        <span class="v13_4">Tic Tac Toe</span>
-        <span class="v13_11">v1.1.0-alpha</span>
-        <div class="v13_12"></div>
-        <div class="v13_13"></div>
-        <span class="v13_14">Room </span>
-        <span class="v15_3">User Name</span>
-        <span class="v13_15" onclick="loadGame()">Join</span>
 
 
-
-        <div class="v13_16">
-            <input class = "textinput" id ="room" placeholder="Enter Room" >
+      <div class="chat-container" id="publicChat">
+        <div class="chat-flow" >
+          <div class="chat-block">
+            
+            <div class="chat-block-connect" onclick ="connectPublic()">Connect</div>
+          </div>
+          <ul id="chat-public" style="list-style-type: disc">
+            <li>
+                This is Public Chat
+            </li>
+          </ul>
         </div>
-        <div class="v15_2">
-            <input class = "textinput" id ="username" placeholder="Enter Name" >
-        </div>
+
+        <form id="messagebar">
+          <input id = "messagebox" type="text" placeholder="Enter Message"  />
+          <input id = "sendbtn" type="submit" />
+        </form>
+      </div>
     </div>
 
-    <script src="/socket.io/socket.io.js"></script>
+
+
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <script src="scripts/client.js"></script>
     <script src="scripts/game.js"></script>
-</body>
-
+  </body>
 </html>

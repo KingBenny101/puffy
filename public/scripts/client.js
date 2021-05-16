@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io('http://localhost:3000/');
 // THIS IS THE CLIENT
 
 socket.on("message", (message) => {
@@ -21,6 +21,21 @@ socket.on("makeMove", (move) => {
 socket.on("reset", () => {
   resetGame();
 });
+socket.on("publicMessage",(message)=>{
+  addMessagePublic(message);
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 function outputMessage(message) {
   var chat = document.getElementById("chat");
@@ -41,6 +56,7 @@ function loadGame() {
     localStorage.setItem("username", username);
     localStorage.setItem("room", room);
     location.href = "pvp.html";
+    disconnectPublic();
   }
 }
 
@@ -91,7 +107,9 @@ function joinroom() {
     username: username,
     room: room,
   };
+  
   socket.emit("joinRoom", user);
+  
 }
 
 // Leave Room
@@ -147,3 +165,55 @@ function movePlayed(block) {
   var playerBlock = document.getElementsByClassName("v15_10")[0];
   playerBlock.style.backgroundColor = "red";
 }
+
+var connectedToPublic = false;
+var username;
+function connectPublic (){
+  username = document.getElementById("username").value;
+  if (username==""){
+    window.alert('Enter a valid username');
+  }
+  else {
+    var chatBlock = document.getElementsByClassName("chat-block")[0];
+    chatBlock.style = "display: none;";
+    connectedToPublic = true;
+
+    // sending message from client
+  const messagebar = document.getElementById("messagebar");
+  messagebar.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    var msg = e.target.elements.messagebox.value;
+    // Emit ChatMesage to server
+    sendMessagePublic(msg);
+
+    // focusing and scrolling the chat
+    e.target.elements.messagebox.value = "";
+    e.target.elements.messagebox.focus();
+  });
+    socket.emit('joinPublic',username);
+  } 
+}
+function disconnectPublic (){
+  socket.emit('leavePublic',username);
+}
+
+
+function addMessagePublic (message){
+  var chat = document.getElementById("chat-public");
+  var msgElement = document.createElement('li');
+  msgElement.innerHTML = message;
+  chat.appendChild(msgElement);
+}
+
+
+function sendMessagePublic(message){
+  //const username = document.getElementById("username").value;
+  data = {
+    username : username,
+    message : message
+  }
+  socket.emit('publicMessageFromClient',data);
+}
+
+

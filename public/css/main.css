@@ -3,10 +3,11 @@
 }
 body {
   font-size: 14px;
+  font-family: Roboto;
+  font-weight: Regular;
   overflow: hidden;
 }
-
-.v13_2 {
+.v17_2 {
   width: 800px;
   height: 600px;
   background: rgba(188,0,255,1);
@@ -16,10 +17,9 @@ body {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  
   overflow: hidden;
 }
-.v13_3 {
+.v17_3 {
   width: 700px;
   height: 80px;
   background: rgba(0,224,255,1);
@@ -34,7 +34,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
-.v13_4 {
+.v17_4 {
   width: 700px;
   color: rgba(255,255,255,1);
   position: absolute;
@@ -46,7 +46,7 @@ body {
   opacity: 1;
   text-align: center;
 }
-.v13_11 {
+.v17_5 {
   width: 60px;
   color: rgba(0,0,0,1);
   position: absolute;
@@ -58,7 +58,7 @@ body {
   opacity: 1;
   text-align: center;
 }
-.v13_12 {
+.v17_6 {
   width: 700px;
   height: 400px;
   background: rgba(92,92,92,1);
@@ -73,65 +73,42 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
-.v13_13 {
+.v17_7 {
   width: 150px;
   height: 80px;
   background: rgba(249,255,0,1);
   opacity: 1;
   position: absolute;
-  top: 445px;
-  left: 325px;
+  top: 398px;
+  left: 168px;
+  z-index: 1;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
 }
-.v13_14 {
-  width: 250px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 310px;
-  left: 125px;
-  font-family: Roboto;
-  font-weight: Regular;
-  font-size: 48px;
-  opacity: 1;
-  text-align: center;
-}
-.v15_3 {
-  width: 250px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 211px;
-  left: 119px;
-  font-family: Roboto;
-  font-weight: Regular;
-  font-size: 48px;
-  opacity: 1;
-  text-align: center;
-}
-.v13_15 {
+.v17_10 {
   width: 150px;
   color: rgba(255,255,255,1);
   position: absolute;
-  top: 455px;
-  left: 325px;
+  top: 408px;
+  left: 168px;
   font-family: Roboto;
   font-weight: Regular;
   font-size: 48px;
   opacity: 1;
+  z-index: 1;
   text-align: center;
 }
-.v13_16 {
+.v17_11 {
   width: 280px;
   height: 80px;
   background: rgba(196,196,196,1);
   opacity: 1;
   position: absolute;
-  top: 300px;
-  left: 420px;
+  top: 309px;
+  left: 103px;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   border-bottom-left-radius: 18px;
@@ -139,14 +116,14 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
-.v15_2 {
+.v17_12 {
   width: 280px;
-  height: 80px;
+  height: 300px;
   background: rgba(196,196,196,1);
   opacity: 1;
   position: absolute;
-  top: 201px;
-  left: 420px;
+  top: 196px;
+  left: 103px;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   border-bottom-left-radius: 18px;
@@ -156,19 +133,106 @@ body {
 }
 
 
-.textinput {
-  height: 100%;
+
+#messagebar {
+  position: absolute;
+  bottom: 10px;
   width: 100%;
-  position: relative;
+  height: 34px;
+}
+
+#chat-public {
+  height: 280px;
+  margin: 0;
+  top: 0px;
+  font-size: 18px;
+  position: absolute;
+  padding-left: 30px;
+  overflow: auto;
+
+}
+
+#username {
+  position: absolute;
+  top: 40px;
+  width: 240px;
+  left: 20px;
+}
+
+#room {
+  position: absolute;
+  top: 130px;
+  
+width: 240px;
+left: 20px;
+
+}
+
+#messagebox {
+  width: 78.5%;
+  height: 100%;
+
+
+}
+
+#sendbtn {
+  height: 100%;
+  position: absolute;
+  right: 0px;
+}
+
+.chat-container{
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  top: 174px;
+  left: 418px;
+  overflow: hidden;
+
+}
+
+.chat-flow{
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top:0px;
+
+  background: rgba(196,196,196,1);
+  opacity: 1;
+
+  overflow: hidden;
+}
+
+.chat-block {
+  display: block; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
+}
+
+
+
+.chat-block-connect {
+  width: 100px;
+  height: 28px;
+  position :absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background-color: royalblue;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
+  text-align: center;
   font-family: Roboto;
   font-weight: Regular;
   font-size: 24px;
-  text-align: center;
-
-
-
 }
