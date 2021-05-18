@@ -4,8 +4,8 @@
   "description": "server for TTT",
   "main": "server.js",
   "scripts": {
-    "start" :"node server",
-    "dev" : "nodemon server"
+    "start": "node server",
+    "dev": "nodemon server"
   },
   "author": "KingBenny101",
   "license": "UNLICENSED",

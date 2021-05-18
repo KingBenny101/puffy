@@ -222,7 +222,7 @@ left: 20px;
   width: 100px;
   height: 28px;
   position :absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -232,6 +232,21 @@ left: 20px;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
   text-align: center;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+}
+
+
+.chat-block-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white;
+  width: 100%;
+  text-align: center;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   font-family: Roboto;
   font-weight: Regular;
   font-size: 24px;

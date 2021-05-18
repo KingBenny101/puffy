@@ -153,7 +153,7 @@ io.on("connection", (socket) => {
     socket.on('publicMessageFromClient',(data) => {
       const username = data.username;
       const message = data.message;
-      io.to(PUBLIC_ID).emit('publicMessage',`${username}: ${message}`);
+      io.to(PUBLIC_ID).emit('publicMessage',`${username} : ${message}`);
       
     });
 
