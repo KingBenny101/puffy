@@ -137,11 +137,10 @@ io.on("connection", (socket) => {
         const roomi = rooms.indexOf(user.room);
         rooms.splice(roomi, 1);
       }
+      io.to(user.room).emit('reset');
       socket.leave(user.room);
     });
   });
-
-
   // JoinPublic
 
   socket.on("joinPublic" ,(username) => {
@@ -161,8 +160,14 @@ io.on("connection", (socket) => {
 
     socket.on("leavePublic",(username) => {
       socket.leave(PUBLIC_ID);
-      socket.broadcast.emit('publicMessage',`${username} has left`);
+      io.to(PUBLIC_ID).emit('publicMessage',`${username} has left`);
     });
+  });
+
+  // GetRoomData 
+  socket.on("getRoomData",() => {
+    socket.emit('roomData',getRoomData());
+    console.log("room data sent");
   });
   // Diconnect
   socket.on("disconnect", () => {
@@ -182,5 +187,25 @@ function findUsersConnected(room) {
 function getRandomItem(set) {
   let items = Array.from(set);
   return items[Math.floor(Math.random() * items.length)];
+}
+
+function getRoomData(){
+  var parsedRoomList = [];
+ 
+  for (var i = 0 ; i < rooms.length;i++){
+    const room = rooms[i];
+    if(findUsersConnected(room)){
+      var usersConnected = findUsersConnected(room);
+      const userCount = usersConnected.size;
+    
+      if(userCount == 1){
+    
+        parsedRoomList.push(room);
+      }
+      
+    }
+  }
+  console.log(parsedRoomList);
+  return parsedRoomList;
 }
 

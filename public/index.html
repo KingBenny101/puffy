@@ -8,7 +8,7 @@
     <link href="./css/main.css" rel="stylesheet" />
     <title>Puffy</title>
   </head>
-  <body>
+  <body onload="onloadIndex()">
     <div class="v17_2">
       <div class="v17_3"></div>
       <span class="v17_4">Tic Tac Toe</span>
@@ -28,8 +28,11 @@
           id = "room"
           type="text"
           placeholder="Room Name"
+          list="room-list"
           style="text-align: center; font-size: 24px"
         />
+        <datalist class = "roomList" id="room-list">
+        </datalist>
       </div>
 
 

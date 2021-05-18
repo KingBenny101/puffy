@@ -2,7 +2,11 @@ const socket = io('http://localhost:3000/');
 // THIS IS THE CLIENT
 
 socket.on("message", (message) => {
-  outputMessage(message);
+  const urlCurrent = window.location.href;
+  if(urlCurrent == 'http://localhost:3000/pvp.html'){
+    outputMessage(message);
+  }
+  
 });
 
 socket.on("rejected", (room) => {
@@ -22,7 +26,16 @@ socket.on("reset", () => {
   resetGame();
 });
 socket.on("publicMessage",(message)=>{
-  addMessagePublic(message);
+  if(connectedToPublic){
+    addMessagePublic(message);
+  }
+  
+});
+
+socket.on("roomData",(roomData)=>{
+  if(roomData){
+    makeDropDownList(roomData);
+  }
 });
 
 
@@ -31,8 +44,9 @@ socket.on("publicMessage",(message)=>{
 
 
 
-
-
+function onloadIndex(){
+  socket.emit('getRoomData');
+}
 
 
 
@@ -53,10 +67,11 @@ function loadGame() {
   if (username == "" || room == "") {
     window.alert("Enter valid options.");
   } else {
+    disconnectPublic();
     localStorage.setItem("username", username);
     localStorage.setItem("room", room);
     location.href = "pvp.html";
-    disconnectPublic();
+    
   }
 }
 
@@ -195,7 +210,9 @@ function connectPublic (){
   } 
 }
 function disconnectPublic (){
+  console.log('disconnected from public');
   socket.emit('leavePublic',username);
+
 }
 
 
@@ -216,4 +233,14 @@ function sendMessagePublic(message){
   socket.emit('publicMessageFromClient',data);
 }
 
+function makeDropDownList(roomData){
+  console.log(roomData);
 
+  for(var i = 0; i < roomData.length;i++){
+    const room = roomData[i]; 
+    var roomList = document.getElementById("room-list");
+    var option = document.createElement("option");
+    option.textContent = room;
+    roomList.appendChild(option);
+  }
+}
