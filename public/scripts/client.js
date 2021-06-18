@@ -38,15 +38,28 @@ socket.on("roomData",(roomData)=>{
   }
 });
 
+socket.on("connectedData",(data)=>{
+  updateConnected(data);
+});
 
 
 
 
 
 
-function onloadIndex(){
+
+
+
+function onloadGame(){
+  // run when game.html is opened
   socket.emit('getRoomData');
 }
+
+function onloadIndex(){
+  // run when index.html is opened
+  socket.emit('getConnectedData');
+}
+
 
 
 
@@ -243,4 +256,10 @@ function makeDropDownList(roomData){
     option.textContent = room;
     roomList.appendChild(option);
   }
+}
+
+
+function updateConnected(data){
+  var connectedCount = document.getElementById("connectedCount");
+  connectedCount.innerHTML = data;
 }

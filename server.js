@@ -169,6 +169,13 @@ io.on("connection", (socket) => {
     socket.emit('roomData',getRoomData());
     console.log("room data sent");
   });
+
+  // GetConnectedData 
+  socket.on("getConnectedData",() => {
+    socket.emit('connectedData',getConnectedData());
+    console.log("connected data sent");
+  });
+
   // Diconnect
   socket.on("disconnect", () => {
     // Broadcast when disconnect
@@ -209,3 +216,18 @@ function getRoomData(){
   return parsedRoomList;
 }
 
+
+function getConnectedData(){
+  // returns the number of players connected
+  var userCount = 0;
+  for (var i = 0 ; i < rooms.length;i++){
+    const room = rooms[i];
+    if(findUsersConnected(room)){
+      var usersConnected = findUsersConnected(room);
+      userCount += usersConnected.size;
+      
+    }
+  }
+  return userCount;
+
+}
