@@ -131,16 +131,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
-.v17_14 {
-  width: 300px;
-  height: 350px;
-  background: rgba(196,196,196,1);
-  opacity: 1;
-  position: absolute;
-  top: 174px;
-  left: 418px;
-  overflow: hidden;
-}
+
 
 
 #messagebar {
@@ -150,13 +141,13 @@ body {
   height: 34px;
 }
 
-#chat {
+#chat-public {
   height: 280px;
   margin: 0;
   top: 0px;
   font-size: 18px;
   position: absolute;
-  padding-left: 25px;
+  padding-left: 30px;
   overflow: auto;
 
 }
@@ -180,13 +171,83 @@ left: 20px;
 #messagebox {
   width: 78.5%;
   height: 100%;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
+
 
 }
 
 #sendbtn {
   height: 100%;
+  position: absolute;
+  right: 0px;
+}
+
+.chat-container{
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  top: 174px;
+  left: 418px;
+  overflow: hidden;
+
+}
+
+.chat-flow{
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top:0px;
+
+  background: rgba(196,196,196,1);
+  opacity: 1;
+
+  overflow: hidden;
+}
+
+.chat-block {
+  display: block; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
+}
+
+
+
+.chat-block-connect {
+  width: 100px;
+  height: 28px;
+  position :absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background-color: royalblue;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+}
+
+
+.chat-block-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white;
+  width: 100%;
+  text-align: center;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
 }

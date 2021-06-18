@@ -6,9 +6,12 @@
       rel="stylesheet"
     />
     <link href="./css/main.css" rel="stylesheet" />
-    <title>Puffy</title>
+    <title>Puffy Game</title>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/game.js"></script>
   </head>
-  <body>
+  <body onload="onloadGame()">
     <div class="v17_2">
       <div class="v17_3"></div>
       <span class="v17_4">Tic Tac Toe</span>
@@ -28,15 +31,22 @@
           id = "room"
           type="text"
           placeholder="Room Name"
+          list="room-list"
           style="text-align: center; font-size: 24px"
         />
+        <datalist class = "roomList" id="room-list">
+        </datalist>
       </div>
-      <div class="v17_14" id="publicChat">
-        <div>
-          <ul id="chat" style="list-style-type: disc">
-            <li>
-                This is Public Chat
-            </li>
+
+
+
+      <div class="chat-container" id="publicChat">
+        <div class="chat-flow" >
+          <div class="chat-block">
+            <span class="chat-block-message">This is Public Chat</span>
+            <div class="chat-block-connect" onclick ="connectPublic()">Connect</div>
+          </div>
+          <ul id="chat-public" style="list-style-type: disc">
           </ul>
         </div>
 
@@ -46,8 +56,9 @@
         </form>
       </div>
     </div>
-    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script src="scripts/client.js"></script>
-    <script src="scripts/game.js"></script>
+
+
+
+    
   </body>
 </html>
