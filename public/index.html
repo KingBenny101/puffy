@@ -1,63 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puffy HomePage</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link href="./css/main.css" rel="stylesheet" />
-    <title>Puffy</title>
+    <link href="./css/index.css" rel="stylesheet" />
   </head>
-  <body onload="onloadIndex()">
-    <div class="v17_2">
-      <div class="v17_3"></div>
-      <span class="v17_4">Tic Tac Toe</span>
-      <span class="v17_5">v2.0.0</span>
-      <div class="v17_6"></div>
-      <div class="v17_7"></div>
-      <span class="v17_10" onclick="loadGame()" >Join</span>
-      
-      <div class="v17_12" id="join">
-        <input
-          id = "username"
-          type="text"
-          placeholder="Username"
-          style="text-align: center; font-size: 24px"
-        />
-        <input
-          id = "room"
-          type="text"
-          placeholder="Room Name"
-          list="room-list"
-          style="text-align: center; font-size: 24px"
-        />
-        <datalist class = "roomList" id="room-list">
-        </datalist>
-      </div>
+  <body>
+    <div class="main">
+      <header class="header">
+        <span class="header-element" id="title">PUFFY</span>
+        <span class="header-element" id="playOnline">Play Online</span>
+        <span class="header-element" id="download">Download</span>
+        <span class="header-element" id="about">About</span>
+      </header>
+      <div class="main-container">
+        <span class="welcome-message-container">
+          Welcome to the Server Page of Puffy
+        </span>
+        <span class="users-connected">2 Players currently online</span>
 
-
-
-      <div class="chat-container" id="publicChat">
-        <div class="chat-flow" >
-          <div class="chat-block">
-            <span class="chat-block-message">This is Public Chat</span>
-            <div class="chat-block-connect" onclick ="connectPublic()">Connect</div>
-          </div>
-          <ul id="chat-public" style="list-style-type: disc">
-          </ul>
+        <div class="main-card">
+          <zero-md src="content.md" id="markdown"></zero-md>
         </div>
-
-        <form id="messagebar">
-          <input id = "messagebox" type="text" placeholder="Enter Message"  />
-          <input id = "sendbtn" type="submit" />
-        </form>
       </div>
+
+      <footer class="footer">
+        <span id="copyright">&#169; KingBenny101</span>
+      </footer>
     </div>
 
-
-
-    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script src="scripts/client.js"></script>
-    <script src="scripts/game.js"></script>
+    <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+    <script src="scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"
+    ></script>
   </body>
 </html>
