@@ -1,9 +1,13 @@
-const socket = io('http://localhost:3000/'||'http://puffy-online.herokuapp.com');
+const socket = io();
+
 // THIS IS THE CLIENT
 
 socket.on("message", (message) => {
   const urlCurrent = window.location.href;
-  if(urlCurrent == 'http://localhost:3000/pvp.html' || urlCurrent == 'http://puffy-online.herokuapp.com/pvp.html'){
+  // if(urlCurrent == 'http://localhost:3000/pvp.html'){
+  //   outputMessage(message);
+  // }
+  if(urlCurrent == 'http://puffy-online.herokuapp.com/pvp.html'){
     outputMessage(message);
   }
   
