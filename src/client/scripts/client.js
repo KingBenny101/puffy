@@ -1,8 +1,16 @@
-const socket = io('https://puffy-online.herokuapp.com/');
+const socket = io();
+
 // THIS IS THE CLIENT
 
 socket.on("message", (message) => {
-  outputMessage(message);
+  const urlCurrent = window.location.href;
+  // if(urlCurrent == 'http://localhost:3000/pvp.html'){
+  //   outputMessage(message);
+  // }
+  if(urlCurrent == 'http://puffy-online.herokuapp.com/pvp.html'){
+    outputMessage(message);
+  }
+  
 });
 
 socket.on("rejected", (room) => {
@@ -21,6 +29,44 @@ socket.on("makeMove", (move) => {
 socket.on("reset", () => {
   resetGame();
 });
+socket.on("publicMessage",(message)=>{
+  if(connectedToPublic){
+    addMessagePublic(message);
+  }
+  
+});
+
+socket.on("roomData",(roomData)=>{
+  if(roomData){
+    makeDropDownList(roomData);
+  }
+});
+
+socket.on("connectedData",(data)=>{
+  updateConnected(data);
+});
+
+
+
+
+
+
+
+
+
+function onloadGame(){
+  // run when game.html is opened
+  socket.emit('getRoomData');
+}
+
+function onloadIndex(){
+  // run when index.html is opened
+  socket.emit('getConnectedData');
+}
+
+
+
+
 
 function outputMessage(message) {
   var chat = document.getElementById("chat");
@@ -38,9 +84,11 @@ function loadGame() {
   if (username == "" || room == "") {
     window.alert("Enter valid options.");
   } else {
+    disconnectPublic();
     localStorage.setItem("username", username);
     localStorage.setItem("room", room);
     location.href = "pvp.html";
+    
   }
 }
 
@@ -91,7 +139,9 @@ function joinroom() {
     username: username,
     room: room,
   };
+  
   socket.emit("joinRoom", user);
+  
 }
 
 // Leave Room
@@ -146,4 +196,74 @@ function movePlayed(block) {
   updateBoard(block);
   var playerBlock = document.getElementsByClassName("v15_10")[0];
   playerBlock.style.backgroundColor = "red";
+}
+
+var connectedToPublic = false;
+var username;
+function connectPublic (){
+  username = document.getElementById("username").value;
+  if (username==""){
+    window.alert('Enter a valid username');
+  }
+  else {
+    var chatBlock = document.getElementsByClassName("chat-block")[0];
+    chatBlock.style = "display: none;";
+    connectedToPublic = true;
+
+    // sending message from client
+  const messagebar = document.getElementById("messagebar");
+  messagebar.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    var msg = e.target.elements.messagebox.value;
+    // Emit ChatMesage to server
+    sendMessagePublic(msg);
+
+    // focusing and scrolling the chat
+    e.target.elements.messagebox.value = "";
+    e.target.elements.messagebox.focus();
+  });
+    socket.emit('joinPublic',username);
+  } 
+}
+function disconnectPublic (){
+  console.log('disconnected from public');
+  socket.emit('leavePublic',username);
+
+}
+
+
+function addMessagePublic (message){
+  var chat = document.getElementById("chat-public");
+  var msgElement = document.createElement('li');
+  msgElement.innerHTML = message;
+  chat.appendChild(msgElement);
+}
+
+
+function sendMessagePublic(message){
+  //const username = document.getElementById("username").value;
+  data = {
+    username : username,
+    message : message
+  }
+  socket.emit('publicMessageFromClient',data);
+}
+
+function makeDropDownList(roomData){
+  console.log(roomData);
+
+  for(var i = 0; i < roomData.length;i++){
+    const room = roomData[i]; 
+    var roomList = document.getElementById("room-list");
+    var option = document.createElement("option");
+    option.textContent = room;
+    roomList.appendChild(option);
+  }
+}
+
+
+function updateConnected(data){
+  var connectedCount = document.getElementById("connectedCount");
+  connectedCount.innerHTML = data;
 }
