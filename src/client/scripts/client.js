@@ -52,7 +52,9 @@ socket.on("connectedData",(data)=>{
 
 
 
-
+function returnHome(){
+  location.replace("../index.html");
+}
 
 
 function onloadGame(){
