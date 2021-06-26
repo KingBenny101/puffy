@@ -1,7 +1,7 @@
 {
   "name": "puffy",
-  "productName": "puffy",
-  "version": "2.0.1",
+  "productName": "Puffy",
+  "version": "2.0.2",
   "description": "Puffy",
   "main": "main.js",
   "scripts": {
