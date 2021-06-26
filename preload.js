@@ -7,19 +7,19 @@ window.addEventListener("DOMContentLoaded", () => {
     const { spawn } = require("child_process");
     //const childPython = spawn('python3.9',[path.join(__dirname,'externalScripts/TicTacToeAI.py'),parseBoard(board)]);
 
+    AIpath = "externalScripts/";
     if (process.platform == "linux") {
-      const childPython = spawn(
-        path.join(__dirname, "externalScripts/TicTacToeAI"),
-        [parseBoard(board)]
-      );
+      AIpath += "TicTacToeAI";
     }
     if (process.platform == "win32") {
-      const childPython = spawn(
-        path.join(__dirname, "externalScripts/TicTacToeAI.exe"),
-        [parseBoard(board)]
-      );
+      AIpath += "TicTacToeAI.exe";
+      
     }
 
+    const childPython = spawn(
+      path.join(__dirname, AIpath),
+      [parseBoard(board)]
+    );
     blockGrid();
 
     childPython.stdout.on("data", (data) => {
