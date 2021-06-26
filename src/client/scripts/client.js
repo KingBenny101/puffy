@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000/');
+const socket = io('https://puffy-online.herokuapp.com/');
 // THIS IS THE CLIENT
 
 socket.on("message", (message) => {
