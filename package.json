@@ -1,8 +1,8 @@
 {
   "name": "puffy",
   "productName": "puffy",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "version": "2.0.1",
+  "description": "Puffy",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -12,6 +12,10 @@
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benstindavis/Puffy.git"
+  },
   "author": {
     "name": "KingBenny101",
     "email": "benstin2727@gmail.com"
@@ -46,7 +50,8 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "socket.io-client": "^4.1.1"
+    "socket.io-client": "^4.1.1",
+    "update-electron-app": "^2.0.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
