@@ -1,8 +1,9 @@
 const { Renderer } = require("electron");
+
 const path = require("path");
 
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("Preload was loaded");
+  
   window.AImove = function () {
     const { spawn } = require("child_process");
     //const childPython = spawn('python3.9',[path.join(__dirname,'externalScripts/TicTacToeAI.py'),parseBoard(board)]);
@@ -13,13 +14,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     if (process.platform == "win32") {
       AIpath += "TicTacToeAI.exe";
-      
     }
 
-    const childPython = spawn(
-      path.join(__dirname, AIpath),
-      [parseBoard(board)]
-    );
+    const childPython = spawn(path.join(__dirname, AIpath), [
+      parseBoard(board),
+    ]);
     blockGrid();
 
     childPython.stdout.on("data", (data) => {
@@ -43,4 +42,16 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error(`python error  ${data}`);
     });
   };
+  // version and autoupdate stuff
+  window.updateVersion = function () {
+    const { ipcRenderer } = require("electron");
+    const version = document.getElementById("version");
+
+    ipcRenderer.send("app_version");
+    ipcRenderer.on("app_version", (event, arg) => {
+      ipcRenderer.removeAllListeners("app_version");
+      version.innerText = "Version " + arg.version;
+    });
+  };
 });
+console.log("Preload was loaded");
