@@ -1,7 +1,7 @@
 {
   "name": "puffy",
   "productName": "Puffy",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "Puffy",
   "main": "main.js",
   "scripts": {
@@ -10,9 +10,10 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "build": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build  --win --publish always"
+    "build": "electron-builder build --win  --publish never",
+    "deploy": "electron-builder build  --win  --publish always"
   },
+ 
   "keywords": [],
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^4.3.9",
+    "hazardous": "^0.3.0",
     "socket.io-client": "^4.1.1"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
-const { Renderer } = require("electron");
+
 
 const path = require("path");
+const { Renderer } = require("electron");
 
 window.addEventListener("DOMContentLoaded", () => {
   window.AImove = function () {
@@ -14,8 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (process.platform == "win32") {
       AIpath += "TicTacToeAI.exe";
     }
-
-    const childPython = spawn(path.join(__dirname, AIpath), [
+    const childPython = spawn(path.join(__dirname, AIpath).replace('app.asar', 'app.asar.unpacked'), [
       parseBoard(board),
     ]);
     blockGrid();
@@ -52,10 +52,11 @@ window.addEventListener("DOMContentLoaded", () => {
       version.innerText = "Version " + arg.version;
     });
 
-
+    console.log("UpdateVersion ran");
     const notification = document.getElementById("notification");
     const message = document.getElementById("message");
     const restartButton = document.getElementById("restart-button");
+    message.innerText = "A new update is available. Downloading now...";
     ipcRenderer.on("update_available", () => {
       ipcRenderer.removeAllListeners("update_available");
       message.innerText = "A new update is available. Downloading now...";
@@ -71,3 +72,5 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 });
 console.log("Preload was loaded");
+
+
