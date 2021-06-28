@@ -1,5 +1,3 @@
-
-
 const path = require("path");
 const { Renderer } = require("electron");
 
@@ -15,9 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
     if (process.platform == "win32") {
       AIpath += "TicTacToeAI.exe";
     }
-    const childPython = spawn(path.join(__dirname, AIpath).replace('app.asar', 'app.asar.unpacked'), [
-      parseBoard(board),
-    ]);
+    const childPython = spawn(
+      path.join(__dirname, AIpath).replace("app.asar", "app.asar.unpacked"),
+      [parseBoard(board)]
+    );
     blockGrid();
 
     childPython.stdout.on("data", (data) => {
@@ -52,25 +51,33 @@ window.addEventListener("DOMContentLoaded", () => {
       version.innerText = "Version " + arg.version;
     });
 
+    ipcRenderer.on("message", function (event, text) {
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      modal.style.display = "block";
+      var modalText = document.getElementById("modal-text");
+      modalText.innerHTML = text;
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      console.log("Message from updater:", text);
+    });
+
     console.log("UpdateVersion ran");
-    const notification = document.getElementById("notification");
-    const message = document.getElementById("message");
-    const restartButton = document.getElementById("restart-button");
-    message.innerText = "A new update is available. Downloading now...";
-    ipcRenderer.on("update_available", () => {
-      ipcRenderer.removeAllListeners("update_available");
-      message.innerText = "A new update is available. Downloading now...";
-      notification.classList.remove("hidden");
-    });
-    ipcRenderer.on("update_downloaded", () => {
-      ipcRenderer.removeAllListeners("update_downloaded");
-      message.innerText =
-        "Update Downloaded. It will be installed on restart. Restart now?";
-      restartButton.classList.remove("hidden");
-      notification.classList.remove("hidden");
-    });
   };
 });
 console.log("Preload was loaded");
-
-

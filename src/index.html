@@ -6,8 +6,7 @@
       rel="stylesheet"
     />
     <link href="./css/start.css" rel="stylesheet" />
-    <script type="text/javascript" src = "render.js">
-    </script>
+    <script type="text/javascript" src="render.js"></script>
     <title>Puffy</title>
   </head>
   <body onload="window.updateVersion()">
@@ -21,14 +20,13 @@
       <span class="v10_28" id="version"></span>
     </div>
 
-    <div id="notification" class="hidden">
-      <p id="message"></p>
-      <button id="close-button" onClick="closeNotification()">
-        Close
-      </button>
-      <button id="restart-button" onClick="restartApp()" class="hidden">
-        Restart
-      </button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id = "modal-text"></p>
+      </div>
     </div>
   </body>
 </html>
