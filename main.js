@@ -24,11 +24,12 @@ const createWindow = () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 629,
+    icon: path.join(__dirname,'images/icon.png'),
     resizable: false,
     webPreferences: {
       // nodeIntegration: true,
       contextIsolation: false,
-      devTools: true,
+      devTools: false,
       preload: path.join(__dirname, 'preload.js'),
     }
   });

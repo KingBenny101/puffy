@@ -61,7 +61,11 @@ window.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "block";
       var modalText = document.getElementById("modal-text");
       modalText.innerHTML = text;
-
+      
+      if(text == 'Update not available.'){
+        console.log("no update");
+        span.style.display = "block";
+      }
       // When the user clicks on <span> (x), close the modal
       span.onclick = function () {
         modal.style.display = "none";
