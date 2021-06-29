@@ -140,9 +140,23 @@ function checkBoard() {
   }
 
   if (winner == 1) {
-    displayMessage("Player 1 is the winner!!!");
+    if(localStorage.getItem('AIx')=='1'){
+      displayMessage("Puffy is the winner!!!");
+
+    }
+    else {
+      displayMessage("Player is the winner!!!");
+
+    }
   } else if (winner == 0) {
-    displayMessage("Player 2 is the winner!!!");
+    if(localStorage.getItem('AIx')=='0'){
+      displayMessage("Puffy is the winner!!!");
+
+    }
+    else {
+      displayMessage("Player is the winner!!!");
+
+    }
   }
 }
 function checkRow(val, row) {
@@ -224,7 +238,9 @@ function AIgoSecond() {
 async function gamestart() {
   if (localStorage.getItem("gamemode") == "1") {
     if (localStorage.getItem("AIorder") == "1") {
-      document.getElementsByClassName("v1_17")[0].textContent = "AI";
+  localStorage.setItem("AIx", "1");
+
+      document.getElementsByClassName("v1_17")[0].textContent = "Puffy";
       document.getElementsByClassName("v1_18")[0].textContent = "Player";
       var i;
       var j;
@@ -240,8 +256,10 @@ async function gamestart() {
       }
       window.AImove();
     } else if (localStorage.getItem("AIorder") == "0") {
+  localStorage.setItem("AIx", "0");
+
       document.getElementsByClassName("v1_17")[0].textContent = "Player";
-      document.getElementsByClassName("v1_18")[0].textContent = "AI";
+      document.getElementsByClassName("v1_18")[0].textContent = "Puffy";
       var i;
       var j;
       for (i = 0; i < 3; i++) {

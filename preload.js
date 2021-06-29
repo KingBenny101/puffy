@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
         changeBlock(block);
         updateBoard(block);
         unblockGrid();
-      }, 1000);
+      }, 100);
     });
 
     childPython.stderr.on("data", (data) => {

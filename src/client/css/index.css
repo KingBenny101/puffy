@@ -6,6 +6,8 @@ body {
   font-family: Roboto;
   font-weight: Regular;
   overflow: hidden;
+  cursor: pointer;
+
 }
 .v17_2 {
   width: 800px;

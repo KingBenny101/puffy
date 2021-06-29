@@ -4,6 +4,8 @@
 body {
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
+
 }
 .v15_4 {
   width: 800px;
@@ -98,6 +100,10 @@ body {
   font-family: Roboto;
   font-weight: Regular;
   font-size: 48px;
+  max-width: 250px;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
   opacity: 1;
   text-align: center;
 }

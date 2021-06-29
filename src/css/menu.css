@@ -4,6 +4,8 @@
 body {
   font-size: 14px;
   overflow: hidden;
+  cursor: pointer;
+
 }
 .v10_48 {
   width: 800px;
