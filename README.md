@@ -44,5 +44,5 @@ Please make sure to update tests as appropriate.
 [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 ## Project Status
-Currently under alpha stage, no releases have been published yet.
+Stable releases have been published. Not optimized for performance. ELECTRON IS A SCAM
 
