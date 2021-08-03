@@ -25,7 +25,7 @@ const createWindow = () => {
     icon: path.join(__dirname, "images/icon.png"),
     resizable: false,
     webPreferences: {
-      // nodeIntegration: true,
+      
       contextIsolation: false,
       devTools: false,
       preload: path.join(__dirname, "preload.js"),
