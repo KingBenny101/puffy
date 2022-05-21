@@ -1,0 +1,253 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  font-family: Roboto;
+  font-weight: Regular;
+  overflow: hidden;
+}
+.v17_2 {
+  width: 800px;
+  height: 600px;
+  background: rgba(188,0,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.v17_3 {
+  width: 700px;
+  height: 80px;
+  background: rgba(0,224,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 27px;
+  left: 50px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v17_4 {
+  width: 700px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 37px;
+  left: 50px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 48px;
+  opacity: 1;
+  text-align: center;
+}
+.v17_5 {
+  width: 60px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 587px;
+  left: 0px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 10px;
+  opacity: 1;
+  text-align: center;
+}
+.v17_6 {
+  width: 700px;
+  height: 400px;
+  background: rgba(92,92,92,1);
+  opacity: 1;
+  position: absolute;
+  top: 149px;
+  left: 50px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v17_7 {
+  width: 150px;
+  height: 80px;
+  background: rgba(249,255,0,1);
+  opacity: 1;
+  position: absolute;
+  top: 398px;
+  left: 168px;
+  z-index: 1;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.v17_10 {
+  width: 150px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 408px;
+  left: 168px;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 48px;
+  opacity: 1;
+  z-index: 1;
+  text-align: center;
+}
+.v17_11 {
+  width: 280px;
+  height: 80px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 309px;
+  left: 103px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.v17_12 {
+  width: 280px;
+  height: 300px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 196px;
+  left: 103px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+
+
+#messagebar {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 34px;
+}
+
+#chat-public {
+  height: 280px;
+  margin: 0;
+  top: 0px;
+  font-size: 18px;
+  position: absolute;
+  padding-left: 30px;
+  overflow: auto;
+
+}
+
+#username {
+  position: absolute;
+  top: 40px;
+  width: 240px;
+  left: 20px;
+}
+
+#room {
+  position: absolute;
+  top: 130px;
+  
+width: 240px;
+left: 20px;
+
+}
+
+#messagebox {
+  width: 78.5%;
+  height: 100%;
+
+
+}
+
+#sendbtn {
+  height: 100%;
+  position: absolute;
+  right: 0px;
+}
+
+.chat-container{
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  top: 174px;
+  left: 418px;
+  overflow: hidden;
+
+}
+
+.chat-flow{
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top:0px;
+
+  background: rgba(196,196,196,1);
+  opacity: 1;
+
+  overflow: hidden;
+}
+
+.chat-block {
+  display: block; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; 
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
+}
+
+
+
+.chat-block-connect {
+  width: 100px;
+  height: 28px;
+  position :absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background-color: royalblue;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+}
+
+
+.chat-block-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  color: white;
+  width: 100%;
+  text-align: center;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+}

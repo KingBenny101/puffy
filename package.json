@@ -1,0 +1,19 @@
+{
+  "name": "puffy-server",
+  "version": "1.0.0",
+  "description": "server for TTT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "KingBenny101",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

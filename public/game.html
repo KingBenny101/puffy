@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Puffy Game</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="scripts/game.js"></script>
+  </head>
+  <body onload="onloadGame()">
+    <div class="v17_2">
+      <div class="v17_3"></div>
+      <span class="v17_4">Tic Tac Toe</span>
+      <span class="v17_5">v2.0.0</span>
+      <div class="v17_6"></div>
+      <div class="v17_7"></div>
+      <span class="v17_10" onclick="loadGame()" >Join</span>
+      
+      <div class="v17_12" id="join">
+        <input
+          id = "username"
+          type="text"
+          placeholder="Username"
+          style="text-align: center; font-size: 24px"
+        />
+        <input
+          id = "room"
+          type="text"
+          placeholder="Room Name"
+          list="room-list"
+          style="text-align: center; font-size: 24px"
+        />
+        <datalist class = "roomList" id="room-list">
+        </datalist>
+      </div>
+
+
+
+      <div class="chat-container" id="publicChat">
+        <div class="chat-flow" >
+          <div class="chat-block">
+            <span class="chat-block-message">This is Public Chat</span>
+            <div class="chat-block-connect" onclick ="connectPublic()">Connect</div>
+          </div>
+          <ul id="chat-public" style="list-style-type: disc">
+          </ul>
+        </div>
+
+        <form id="messagebar">
+          <input id = "messagebox" type="text" placeholder="Enter Message"  />
+          <input id = "sendbtn" type="submit" />
+        </form>
+      </div>
+    </div>
+
+
+
+    
+  </body>
+</html>
