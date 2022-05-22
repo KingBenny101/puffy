@@ -3,7 +3,7 @@
 - A TicTacToe Game
 - Made for fun
 ## PuffyApp
-- An universal desktop app made in Electron
+- An universal desktop app made in [Electron](https://www.electronjs.org/)
 ## PuffyServer
 - An online version of the same for PvP
 ### This is a Merged Repository

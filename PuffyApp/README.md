@@ -28,7 +28,7 @@ npm run build
 ```
 The AI part was made in python, so it must be compiled to a binary file corresponding to your OS before running the project.
 
-## [PuffyServer](https://github.com/benstindavis/PuffyServer)
+## [PuffyServer](https://github.com/benstindavis/Puffy/tree/master/PuffyServer)
 A node.js application for playing the game online. Follow the same installation steps. The server will run at http://localhost:3000/. You can use any browser to connect.
 
 
